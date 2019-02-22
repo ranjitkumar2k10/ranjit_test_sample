@@ -29,7 +29,6 @@ edge service availability
 application; ETSI 10 ETSI GS MEC 011 V1.1.1 (2017-07)
 - discovery of available mobile edge services
 
-For MP1.yaml gitlab -  https://forge.etsi.org/gitlab/mec/gs011-app-enablement-api
 
 Implemented in go languge
 
@@ -38,9 +37,10 @@ Implemented in go languge
 You have a working {Go environment}.
 
 go get -d <githublink/edge-app-enablement-service>
+
 cd $GOPATH/src/edge-app-enablement-service
+
 make build
-./bin/AppEnabler
 
 
 
@@ -53,37 +53,30 @@ installation steps can find at https://mariadb.com/kb/en/library/mariadb-package
 
 After installaing mariaDB Create User appenableruser:
 [root@localhost ~]# mysql
-Welcome to the MariaDB monitor.  Commands end with ; or \g.
-Your MariaDB connection id is 11
-Server version: 10.3.13-MariaDB MariaDB Server
 
-Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
-
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+// create namespace: appenabler
 
 MariaDB [(none)]> CREATE DATABASE appenabler;
-Query OK, 1 row affected (0.001 sec)
 
-MariaDB [(none)]>
+// create database user: appenabler
+
 MariaDB [(none)]> CREATE USER 'appenableruser'@'%' IDENTIFIED BY 'R00t@r00t';
-Query OK, 0 rows affected (0.001 sec)
+
+// assign grant previleges to appenableruser 
 
 MariaDB [(none)]> GRANT ALL PRIVILEGES ON * . * TO 'appenableruser'@'%';
-Query OK, 0 rows affected (0.000 sec)
-
-
-
-
-
-
-    
-
-2. export the environment varibels
-https://mariadb.com/kb/en/library/mariadb-package-repository-setup-and-usage/
-
 
 ## Running the tests
+### export the env varibles
 
+export DB_USER_NAME=appenableruser
+export DB_PASSWORD=UjAwdEByMDB0Cg== // base64 encoded R00t@r00t
+export DB_NAME=appenabler
+export DB_TYPE=mysql
+export DB_MYSQL_LISTNER_IP=127.0.0.1 // mysql service listner IP
+export DB_MYSQL_SERVICE_PORT=3306
+
+### run test cases
 make test 
 
 
