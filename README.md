@@ -2,18 +2,7 @@
 
 The mobile edge platform, as defined in ETSI GS MEC 003 [3], offers an environment where mobile edge applications may discover, advertise, consume and offer mobile edge services.
 
-Via Mp1 reference point between the mobile edge platform and the mobile edge applications, as defined in ETSI GS MEC 003 [3], one of the  basic functions are enabled such as:
-
-- mobile edge service assistance:
-    - authentication and authorization of producing and consuming mobile edge serviceS
-    - a means for service producing mobile edge applications to register towards the mobile edge platform the
-mobile edge services they provide, and to update the mobile edge platform about changes of the mobile
-edge service availability
-    - a means to notify the changes of the mobile edge service availability to the relevant mobile edge
-application
-ETSI
-10 ETSI GS MEC 011 V1.1.1 (2017-07)
-    - discovery of available mobile edge services; 
+Via Mp1 reference point between the mobile edge platform and the mobile edge applications, as defined in ETSI GS MEC 003 [3], one of the  basic functions are enabled such as mobile edge service assistance, mobile edge application assistance, traffic routing, DNS rules, timing, transport information:
 
 For additional information about Application Enablement API and other supporting functions - https://www.etsi.org/deliver/etsi_gs/MEC/001_099/011/01.01.01_60/gs_mec011v010101p.pdf
 
