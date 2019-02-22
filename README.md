@@ -22,50 +22,71 @@ For MP1.yaml gitlab -  https://forge.etsi.org/gitlab/mec/gs011-app-enablement-ap
 
 ## Project Overview
 Part of this project we implemented mobile edge service assistance such as 
-   - a means for service producing mobile edge applications to register towards the mobile edge platform the
+   - service producing mobile edge applications to register towards the mobile edge platform the
 mobile edge services they provide, and to update the mobile edge platform about changes of the mobile
 edge service availability
-   - a means to notify the changes of the mobile edge service availability to the relevant mobile edge
+   - notify the changes of the mobile edge service availability to the relevant mobile edge
 application; ETSI 10 ETSI GS MEC 011 V1.1.1 (2017-07)
 - discovery of available mobile edge services
 
-Implemented in go languge
-
 For MP1.yaml gitlab -  https://forge.etsi.org/gitlab/mec/gs011-app-enablement-api
+
+Implemented in go languge
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+You have a working {Go environment}.
+
+go get -d <githublink/edge-app-enablement-service>
+cd $GOPATH/src/edge-app-enablement-service
+make build
+./bin/AppEnabler
+
+
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
 
-```
-Give examples
-```
+#### Install maria DB on VM/Baremetal
 
-### Installing
+installation steps can find at https://mariadb.com/kb/en/library/mariadb-package-repository-setup-and-usage/
 
-A step by step series of examples that tell you how to get a development env running
+After installaing mariaDB Create User appenableruser:
+[root@localhost ~]# mysql
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 11
+Server version: 10.3.13-MariaDB MariaDB Server
 
-Say what the step will be
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
 
-```
-Give the example
-```
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
-And repeat
+MariaDB [(none)]> CREATE DATABASE appenabler;
+Query OK, 1 row affected (0.001 sec)
 
-```
-until finished
-```
+MariaDB [(none)]>
+MariaDB [(none)]> CREATE USER 'appenableruser'@'%' IDENTIFIED BY 'R00t@r00t';
+Query OK, 0 rows affected (0.001 sec)
 
-End with an example of getting some data out of the system or using it for a little demo
+MariaDB [(none)]> GRANT ALL PRIVILEGES ON * . * TO 'appenableruser'@'%';
+Query OK, 0 rows affected (0.000 sec)
+
+
+
+
+
+
+    
+
+2. export the environment varibels
+https://mariadb.com/kb/en/library/mariadb-package-repository-setup-and-usage/
+
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+make test 
+
+
 
 ### Break down into end to end tests
 
