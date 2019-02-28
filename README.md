@@ -41,6 +41,7 @@ make build
 installation steps can find at https://mariadb.com/kb/en/library/mariadb-package-repository-setup-and-usage/
 
 After installaing mariaDB Create User appenableruser:
+
 [root@localhost ~]# mysql
 
 // create namespace: appenabler
@@ -52,22 +53,47 @@ MariaDB [(none)]> CREATE DATABASE appenabler;
 MariaDB [(none)]> CREATE USER 'appenableruser'@'%' IDENTIFIED BY 'R00t@r00t';
 
 // assign grant previleges to appenableruser 
+//grant all privileges on *.* to appenableruser@localhost identified by 'R00t@r00t' with grant option
 
 MariaDB [(none)]> GRANT ALL PRIVILEGES ON * . * TO 'appenableruser'@'%';
+
+# for debugging
+[root@localhost ~]# mysql
+MariaDB [(none)]> use appenabler
+MariaDB [appenabler]> show tables;
++-----------------------------------------+
+| Tables_in_appenabler                    |
++-----------------------------------------+
+| AppTerminationNotificationSubscription  |
+| SerAvailabilityNotificationSubscription |
+| SerAvailabilityNotification_v           |
+| services                                |
++-----------------------------------------+
+
+
 
 ## Running the tests
 ### export the env varibles
 
 export DB_USER_NAME=appenableruser
+
 export DB_PASSWORD=UjAwdEByMDB0Cg== // base64 encoded R00t@r00t
+
 export DB_NAME=appenabler
+
 export DB_TYPE=mysql
+
 export DB_MYSQL_LISTNER_IP=127.0.0.1 // mysql service listner IP
+
 export DB_MYSQL_SERVICE_PORT=3306
 
 ### run test cases
+cd $GOPATH/src/edge-app-enablement-service
 make test 
 
+### running service
+cd $GOPATH/src/edge-app-enablement-service
+./bin/AppEnabler
 
 
 ### Break down into end to end tests
