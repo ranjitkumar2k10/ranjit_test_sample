@@ -45,17 +45,16 @@ After installaing mariaDB Create User appenableruser:
 [root@localhost ~]# mysql
 
 // create namespace: appenabler
-
 MariaDB [(none)]> CREATE DATABASE appenabler;
 
 // create database user: appenabler
-
 MariaDB [(none)]> CREATE USER 'appenableruser'@'%' IDENTIFIED BY 'R00t@r00t';
 
-// assign grant previleges to appenableruser 
-//grant all privileges on *.* to appenableruser@localhost identified by 'R00t@r00t' with grant option
 
-MariaDB [(none)]> GRANT ALL PRIVILEGES ON * . * TO 'appenableruser'@'%';
+// assign grant previleges to appenableruser
+
+MariaDB [(none)]> grant all privileges on *.* to appenableruser@localhost identified by 'R00t@r00t' with grant option
+
 
 # for debugging
 [root@localhost ~]# mysql
