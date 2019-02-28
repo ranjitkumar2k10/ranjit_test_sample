@@ -41,33 +41,24 @@ make build
 
 [root@localhost ~]# mysql
 
-// create database namespace: appenabler
-
+// create database namespace: appenabler\
 MariaDB [(none)]> CREATE DATABASE appenabler;
 
-// create database user: appenableruser
-
+// create database user: appenableruser\
 MariaDB [(none)]> CREATE USER 'appenableruser'@'%' IDENTIFIED BY 'R00t@r00t';
 
-
-// assign grant previleges to appenableruser
-
+// assign grant previleges to appenableruser\
 MariaDB [(none)]> grant all privileges on *.* to appenableruser@localhost identified by 'R00t@r00t' with grant option
 
 
-## Running the tests
+## Run
 ### export the env varibles
 
-export DB_USER_NAME=appenableruser
-
-export DB_PASSWORD=UjAwdEByMDB0Cg== // base64 encoded R00t@r00t
-
-export DB_NAME=appenabler
-
-export DB_TYPE=mysql
-
-export DB_LISTENER_IP=127.0.0.1 // mysql service listner IP
-
+export DB_USER_NAME=appenableruser \
+export DB_PASSWORD=UjAwdEByMDB0Cg== // base64 encoded R00t@r00t\
+export DB_NAME=appenabler\
+export DB_TYPE=mysql\
+export DB_LISTENER_IP=127.0.0.1 // mysql service listner IP\
 export DB_LISTENER_PORT=3306 // mysql service port
 
 ### run test cases
