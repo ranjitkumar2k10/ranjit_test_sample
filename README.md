@@ -2,15 +2,15 @@
 
 The mobile edge platform, as defined in ETSI GS MEC 003 [3], offers an environment where mobile edge applications may discover, advertise, consume and offer mobile edge services.
 
-Via Mp1 reference point between the mobile edge platform and the mobile edge applications, as defined in ETSI GS MEC 003 [3], one of the  basic functions are enabled such as mobile edge service assistance, mobile edge application assistance, traffic routing, DNS rules, timing, transport information:
+Via Mp1 reference point between the mobile edge platform and the mobile edge applications, as defined in ETSI GS MEC 003 [3], one of the  basic functions are enabled such as **mobile edge service assistance, mobile edge application assistance, traffic routing, DNS rules, timing, transport information**.
 
-For additional information about Application Enablement API and other supporting functions - https://www.etsi.org/deliver/etsi_gs/MEC/001_099/011/01.01.01_60/gs_mec011v010101p.pdf
+[For additional information about Application Enablement API and other supporting functions](https://www.etsi.org/deliver/etsi_gs/MEC/001_099/011/01.01.01_60/gs_mec011v010101p.pdf)
 
-For MP1.yaml gitlab -  https://forge.etsi.org/gitlab/mec/gs011-app-enablement-api
+[MP1.yaml gitlab](https://forge.etsi.org/gitlab/mec/gs011-app-enablement-api)
 
 
 ## Project Overview
-Part of this project we implemented mobile edge service assistance such as 
+### Supported Functionality - **mobile edge service assistance**
    - service producing mobile edge applications to register towards the mobile edge platform the
 mobile edge services they provide, and to update the mobile edge platform about changes of the mobile
 edge service availability
@@ -18,12 +18,11 @@ edge service availability
 application; ETSI 10 ETSI GS MEC 011 V1.1.1 (2017-07)
 - discovery of available mobile edge services
 
-
-Implemented in go languge
-
+### Supported Languages - go
+Compatibility
 ## Getting Started
 
-You have a working {Go environment}.
+You have a working [Go environment](https://golang.org/doc/install)
 
 go get -d <githublink/edge-app-enablement-service>
 
@@ -42,7 +41,7 @@ make build
 
 [root@localhost ~]# mysql
 
-// create database: appenabler
+// create database namespace: appenabler
 
 MariaDB [(none)]> CREATE DATABASE appenabler;
 
@@ -54,10 +53,6 @@ MariaDB [(none)]> CREATE USER 'appenableruser'@'%' IDENTIFIED BY 'R00t@r00t';
 // assign grant previleges to appenableruser
 
 MariaDB [(none)]> grant all privileges on *.* to appenableruser@localhost identified by 'R00t@r00t' with grant option
-
-
-
-
 
 
 ## Running the tests
@@ -78,7 +73,7 @@ export DB_LISTENER_PORT=3306 // mysql service port
 ### run test cases
 cd $GOPATH/src/edge-app-enablement-service
 
-make test 
+make test
 
 ### running service
 cd $GOPATH/src/edge-app-enablement-service
