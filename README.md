@@ -35,19 +35,19 @@ make build
 
 ### Prerequisites
 
+* [Java 7 or 8](http://java.oracle.com/)
+* [Install maria DB](https://mariadb.com/kb/en/library/mariadb-package-repository-setup-and-usage/)
 
-#### Install maria DB on VM/Baremetal
-
-installation steps can find at https://mariadb.com/kb/en/library/mariadb-package-repository-setup-and-usage/
-
-After installaing mariaDB Create User appenableruser:
+* **Create database and user**
 
 [root@localhost ~]# mysql
 
-// create namespace: appenabler
+// create database: appenabler
+
 MariaDB [(none)]> CREATE DATABASE appenabler;
 
-// create database user: appenabler
+// create database user: appenableruser
+
 MariaDB [(none)]> CREATE USER 'appenableruser'@'%' IDENTIFIED BY 'R00t@r00t';
 
 
@@ -56,18 +56,7 @@ MariaDB [(none)]> CREATE USER 'appenableruser'@'%' IDENTIFIED BY 'R00t@r00t';
 MariaDB [(none)]> grant all privileges on *.* to appenableruser@localhost identified by 'R00t@r00t' with grant option
 
 
-# for debugging
-[root@localhost ~]# mysql
-MariaDB [(none)]> use appenabler
-MariaDB [appenabler]> show tables;
-+-----------------------------------------+
-| Tables_in_appenabler                    |
-+-----------------------------------------+
-| AppTerminationNotificationSubscription  |
-| SerAvailabilityNotificationSubscription |
-| SerAvailabilityNotification_v           |
-| services                                |
-+-----------------------------------------+
+
 
 
 
@@ -82,18 +71,32 @@ export DB_NAME=appenabler
 
 export DB_TYPE=mysql
 
-export DB_MYSQL_LISTNER_IP=127.0.0.1 // mysql service listner IP
+export DB_LISTENER_IP=127.0.0.1 // mysql service listner IP
 
-export DB_MYSQL_SERVICE_PORT=3306
+export DB_LISTENER_PORT=3306 // mysql service port
 
 ### run test cases
 cd $GOPATH/src/edge-app-enablement-service
+
 make test 
 
 ### running service
 cd $GOPATH/src/edge-app-enablement-service
+
 ./bin/AppEnabler
 
+# for debugging
+[root@localhost ~]# mysql
+MariaDB [(none)]> use appenabler
+MariaDB [appenabler]> show tables;
++-----------------------------------------+
+| Tables_in_appenabler                    |
++-----------------------------------------+
+| AppTerminationNotificationSubscription  |
+| SerAvailabilityNotificationSubscription |
+| SerAvailabilityNotification_v           |
+| services                                |
++-----------------------------------------+
 
 ### Break down into end to end tests
 
