@@ -1,12 +1,17 @@
 # Edge Platform Application Enablement API Implementation
 
+## Supported By [![N|Solid](https://www.nokia.com/sites/default/files/styles/original/public/media/nokia_logo_blue.png)](https://networks.nokia.com/)
+
+
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+
 The mobile edge platform, as defined in ETSI GS MEC 003 [3], offers an environment where mobile edge applications may discover, advertise, consume and offer mobile edge services.
 
 Via Mp1 reference point between the mobile edge platform and the mobile edge applications, as defined in ETSI GS MEC 003 [3], one of the  basic functions are enabled such as **mobile edge service assistance, mobile edge application assistance, traffic routing, DNS rules, timing, transport information**.
 
 [For additional information about Application Enablement API and other supporting functions](https://www.etsi.org/deliver/etsi_gs/MEC/001_099/011/01.01.01_60/gs_mec011v010101p.pdf)
 
-[MP1.yaml gitlab](https://forge.etsi.org/gitlab/mec/gs011-app-enablement-api)
+[MP1.yaml](https://forge.etsi.org/gitlab/mec/gs011-app-enablement-api)
 
 
 ## Project Overview
@@ -24,15 +29,15 @@ application; ETSI 10 ETSI GS MEC 011 V1.1.1 (2017-07)
 
 ## Getting Started
 
-You have a working [Go environment](https://golang.org/doc/install)
+* [Prerequisites](#Prerequisites)
 
-go get -d <githublink/edge-app-enablement-service>
-
-cd $GOPATH/src/edge-app-enablement-service
-
-make build
-
-
+* You have a working [Go environment](https://golang.org/doc/install)
+```
+$ go clone  <githublink/edge-app-enablement-service>
+  cd $GOPATH/src/edge-app-enablement-service
+  make build
+```
+* [Run](#Run)
 
 ### Prerequisites
 
@@ -41,16 +46,16 @@ make build
 
 * **Create database and user**
 
-[root@localhost ~]# mysql
+  [root@localhost ~]# mysql
 
-// create database namespace: appenabler\
-MariaDB [(none)]> CREATE DATABASE appenabler;
+  // create database namespace: appenabler\
+  MariaDB [(none)]> CREATE DATABASE appenabler;
 
-// create database user: appenableruser\
-MariaDB [(none)]> CREATE USER 'appenableruser'@'%' IDENTIFIED BY 'R00t@r00t';
+  // create database user: appenableruser\
+  MariaDB [(none)]> CREATE USER 'appenableruser'@'%' IDENTIFIED BY 'R00t@r00t';
 
-// assign grant previleges to appenableruser\
-MariaDB [(none)]> grant all privileges on *.* to appenableruser@localhost identified by 'R00t@r00t' with grant option
+  // assign grant previleges to appenableruser\
+  MariaDB [(none)]> grant all privileges on *.* to appenableruser@localhost identified by 'R00t@r00t' with grant option
 
 
 ## Run
@@ -72,6 +77,16 @@ make test
 cd $GOPATH/src/edge-app-enablement-service
 
 ./bin/AppEnabler
+
+
+### Tech
+App enablement service uses a number of open source projects to work properly:
+
+(openapi-generator)[https://github.com/OpenAPITools/openapi-generator] - generating server stub code\
+(sql)[https://github.com/golang/go/tree/master/src/database/sql] - connecting to sql based database \
+(MySQL Driver)[https://github.com/go-sql-driver/mysql]
+
+
 
 # for debugging
 [root@localhost ~]# mysql
