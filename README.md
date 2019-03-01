@@ -3,11 +3,11 @@
 ## Supported By [![N|Solid](https://www.nokia.com/sites/default/files/styles/original/public/media/nokia_logo_blue.png)](https://networks.nokia.com/)
 
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+* Main: [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger) [![IntegrationTests](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/swagger-api/swagger-codegen)
 
 The mobile edge platform, as defined in ETSI GS MEC 003 [[3]](https://www.etsi.org/deliver/etsi_gs/mec/001_099/003/01.01.01_60/gs_mec003v010101p.pdf), offers an environment where mobile edge applications may discover, advertise, consume and offer mobile edge services.
 
-Via Mp1 reference point between the mobile edge platform and the mobile edge applications, as defined in ETSI GS MEC 003 [[3]](https://www.etsi.org/deliver/etsi_gs/mec/001_099/003/01.01.01_60/gs_mec003v010101p.pdf), one of the  basic functions are enabled such as **mobile edge service assistance, mobile edge application assistance, traffic routing, DNS rules, timing, transport information**.
+Via Mp1 reference point between the mobile edge platform and the mobile edge applications, as defined in ETSI GS MEC 003 [[3]](https://www.etsi.org/deliver/etsi_gs/mec/001_099/003/01.01.01_60/gs_mec003v010101p.pdf), some of the  basic functions are enabled such as **mobile edge service assistance, mobile edge application assistance, traffic routing, DNS rules, timing, transport information**.
 
 [Details about mobile edge platform and application enablement API and other supporting functions](https://www.etsi.org/deliver/etsi_gs/MEC/001_099/011/01.01.01_60/gs_mec011v010101p.pdf)
 
@@ -16,26 +16,31 @@ Via Mp1 reference point between the mobile edge platform and the mobile edge app
 
 ## Project Overview
 
-* Implementation of Application Enablement service based on ETSI MEC MP1 standard
+* Implementation of Application Enablement service based on ETSI GS MEC 011 [[11]](https://www.etsi.org/deliver/etsi_gs/MEC/001_099/011/01.01.01_60/gs_mec011v010101p.pdf) standard based on MP1.yaml
 
 * [Supporting Functionalities](#FunctionalitiesSupport)
-
 
 * **Implementation Supports**
    * Languages - [go](https://golang.org/)
    * ETSI MEC ISG MEC011 Compatible versions - [mec11v205](https://forge.etsi.org/gitlab/mec/gs011-app-enablement-api/raw/mec11v205-swagger2/Mp1.yaml)
+   * Open API Specification 2.0 MP1.yaml
 
 
 
-## Getting Started
+## Development
+
+
+
+
+If you want to build from source:
 
 * [Prerequisites](#Prerequisites)
 
-* You have a working [Go environment](https://golang.org/doc/install)
+* You have a working [Go environment](https://golang.org/doc/install) and make sure [GO_PATH](https://github.com/golang/go/wiki/SettingGOPATH) is set properly.
 ```
       $ git clone  <githublink/edge-app-enablement-service>
-      cd $GOPATH/src/edge-app-enablement-service
-      make build
+      $ cd $GOPATH/src/edge-app-enablement-service
+      $ make build
 ```
 * [Run](#Run)
 
@@ -125,36 +130,22 @@ Explain what these tests test and why
 Give an example
 ```
 
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Want to contribute? Great!
+
+If you would like to contribute, Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+ 
+ need to update
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+need to update
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
