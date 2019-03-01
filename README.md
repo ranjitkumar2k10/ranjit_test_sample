@@ -27,10 +27,7 @@ Via Mp1 reference point between the mobile edge platform and the mobile edge app
 
 
 
-## Development
-
-
-
+## Getting Started
 
 If you want to build from source:
 
@@ -51,7 +48,7 @@ If you want to build from source:
 
 * **Create database and user**
 
-  [root@localhost ~]# mysql
+  [root@localhost ~]$ mysql
 
   // create database namespace: appenabler\
   MariaDB [(none)]> CREATE DATABASE appenabler;
@@ -66,22 +63,43 @@ If you want to build from source:
 ### Run
 #### export the env varibles
 
-export DB_USER_NAME=appenableruser \
-export DB_PASSWORD=UjAwdEByMDB0Cg== // base64 encoded R00t@r00t\
-export DB_NAME=appenabler\
-export DB_TYPE=mysql\
-export DB_LISTENER_IP=127.0.0.1 // mysql service listner IP\
-export DB_LISTENER_PORT=3306 // mysql service port
+$ export DB_USER_NAME=appenableruser \
+$ export DB_PASSWORD=UjAwdEByMDB0Cg== // base64 encoded R00t@r00t\
+$ export DB_NAME=appenabler\
+$ export DB_TYPE=mysql\
+$ export DB_LISTENER_IP=127.0.0.1 // mysql service listner IP\
+$ export DB_LISTENER_PORT=3306 // mysql service port
 
 #### run test cases
-cd $GOPATH/src/edge-app-enablement-service
+$ cd $GOPATH/src/edge-app-enablement-service
 
-make test
+$ make test
 
 ### running service
-cd $GOPATH/src/edge-app-enablement-service
+$ cd $GOPATH/src/edge-app-enablement-service
 
-./bin/AppEnabler
+$ ./bin/AppEnabler
+
+## Development
+
+### Directory structure
+```
+$ cd $GOPATH/src/edge-app-enablement-service  
+                                             - go (appenabler go module)
+                                              - AppDB (AppDB go module)
+```
+
+**go directory** :  
+            - appenabler go module
+            - http handlers and business logic
+            
+**AppDB directory** :
+            - database interaction with using go database sql driver
+            - DML, DDL queries
+
+
+
+
 
 
 ### Tech
