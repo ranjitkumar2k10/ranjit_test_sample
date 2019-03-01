@@ -15,17 +15,20 @@ Via Mp1 reference point between the mobile edge platform and the mobile edge app
 
 
 ## Project Overview
-### Supported Functionalities - **mobile edge service assistance**
-   - service producing mobile edge applications to register towards the mobile edge platform the
+
+* Implementation of Application Enablement service based on ETSI MEC MP1 standard
+
+* **Functionalities Support**
+   * **mobile edge service assistance**
+      * service producing mobile edge applications to register towards the mobile edge platform the
 mobile edge services they provide, and to update the mobile edge platform about changes of the mobile
 edge service availability
-   - notify the changes of the mobile edge service availability to the relevant mobile edge
-application; ETSI 10 ETSI GS MEC 011 V1.1.1 (2017-07)
-- discovery of available mobile edge services
+      * notify the changes of the mobile edge service availability to the relevant mobile edge application; ETSI 10 ETSI GS MEC 011 V1.1.1 (2017-07)
+      * discovery of available mobile edge services
 
-### Supports - 
-- Languages - [go](https://golang.org/) \
-- ETSI MEC ISG MEC011 Compatible versions - [mec11v205](https://forge.etsi.org/gitlab/mec/gs011-app-enablement-api/raw/mec11v205-swagger2/Mp1.yaml) \
+* **Implementation Supports**
+   * Languages - [go](https://golang.org/)
+   * ETSI MEC ISG MEC011 Compatible versions - [mec11v205](https://forge.etsi.org/gitlab/mec/gs011-app-enablement-api/raw/mec11v205-swagger2/Mp1.yaml)
 
 ## Getting Started
 
@@ -33,9 +36,9 @@ application; ETSI 10 ETSI GS MEC 011 V1.1.1 (2017-07)
 
 * You have a working [Go environment](https://golang.org/doc/install)
 ```
-$ go clone  <githublink/edge-app-enablement-service>
-  cd $GOPATH/src/edge-app-enablement-service
-  make build
+      $ git clone  <githublink/edge-app-enablement-service>
+      cd $GOPATH/src/edge-app-enablement-service
+      make build
 ```
 * [Run](#Run)
 
