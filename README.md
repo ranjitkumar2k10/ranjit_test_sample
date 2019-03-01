@@ -25,7 +25,7 @@ Via Mp1 reference point between the mobile edge platform and the mobile edge app
    * ETSI MEC ISG MEC011 Compatible versions - [mec11v205](https://forge.etsi.org/gitlab/mec/gs011-app-enablement-api/raw/mec11v205-swagger2/Mp1.yaml)
    * Open API Specification 2.0 [mec11v205-swagger2 MP1.yaml](https://forge.etsi.org/gitlab/mec/gs011-app-enablement-api)
 
-
+* [Contribution](#Contributing)
 
 ## Getting Started
 
@@ -90,20 +90,22 @@ $ cd $GOPATH/src/edge-app-enablement-service
 ```
 
 **go directory** :  
-            - appenabler go module
+            - appenabler go module\
             - http handlers and business logic
             
-**AppDB directory** :
-            - database interaction with using go database sql driver
-            - DML, DDL queries
+**AppDB directory** : \
+            * database interaction with using go database sql driver\
+            * DML, DDL queries
 
 ### Code Design flow
+```
+Flow: 
+   [MEApplication POST/GET/PUT] -> [AppEnabler service]
 
--------> [http handler POST/GET/PUT] -> [Business Logic] -> [Database interaction]
+Operations in App Enabler service:
+   [http handler POST/GET/PUT] -> [Business Logic] -> [Database interaction]
 
-
-
-
+```
 
 
 
