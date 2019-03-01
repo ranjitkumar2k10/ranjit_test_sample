@@ -11,19 +11,19 @@ Via Mp1 reference point between the mobile edge platform and the mobile edge app
 
 [Details about mobile edge platform and application enablement API and other supporting functions](https://www.etsi.org/deliver/etsi_gs/MEC/001_099/011/01.01.01_60/gs_mec011v010101p.pdf)
 
-[MP1.yaml](https://forge.etsi.org/gitlab/mec/gs011-app-enablement-api)
+[ETSI app enablement git lab](https://forge.etsi.org/gitlab/mec/gs011-app-enablement-api)
 
 
 ## Project Overview
 
-* Implementation of Application Enablement service based on ETSI GS MEC 011 [[11]](https://www.etsi.org/deliver/etsi_gs/MEC/001_099/011/01.01.01_60/gs_mec011v010101p.pdf) standard based on MP1.yaml
+* Implementation of Application Enablement service based on ETSI GS MEC 011 [[11]](https://www.etsi.org/deliver/etsi_gs/MEC/001_099/011/01.01.01_60/gs_mec011v010101p.pdf) standard
 
 * [Supporting Functionalities](#FunctionalitiesSupport)
 
 * **Implementation Supports**
    * Languages - [go](https://golang.org/)
    * ETSI MEC ISG MEC011 Compatible versions - [mec11v205](https://forge.etsi.org/gitlab/mec/gs011-app-enablement-api/raw/mec11v205-swagger2/Mp1.yaml)
-   * Open API Specification 2.0 MP1.yaml
+   * Open API Specification 2.0 [mec11v205-swagger2 MP1.yaml](https://forge.etsi.org/gitlab/mec/gs011-app-enablement-api)
 
 
 
@@ -96,6 +96,11 @@ $ cd $GOPATH/src/edge-app-enablement-service
 **AppDB directory** :
             - database interaction with using go database sql driver
             - DML, DDL queries
+
+### Code Design flow
+
+-------> [http handler POST/GET/PUT] -> [Business Logic] -> [Database interaction]
+
 
 
 
