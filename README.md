@@ -1,15 +1,15 @@
-# Edge Platform Application Enablement API Implementation
+# Edge Platform Application Enablement Service
 
 ## Supported By [![N|Solid](https://www.nokia.com/sites/default/files/styles/original/public/media/nokia_logo_blue.png)](https://networks.nokia.com/)
 
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-The mobile edge platform, as defined in ETSI GS MEC 003 [3], offers an environment where mobile edge applications may discover, advertise, consume and offer mobile edge services.
+The mobile edge platform, as defined in ETSI GS MEC 003 [[3]](https://www.etsi.org/deliver/etsi_gs/mec/001_099/003/01.01.01_60/gs_mec003v010101p.pdf), offers an environment where mobile edge applications may discover, advertise, consume and offer mobile edge services.
 
-Via Mp1 reference point between the mobile edge platform and the mobile edge applications, as defined in ETSI GS MEC 003 [3], one of the  basic functions are enabled such as **mobile edge service assistance, mobile edge application assistance, traffic routing, DNS rules, timing, transport information**.
+Via Mp1 reference point between the mobile edge platform and the mobile edge applications, as defined in ETSI GS MEC 003 [[3]](https://www.etsi.org/deliver/etsi_gs/mec/001_099/003/01.01.01_60/gs_mec003v010101p.pdf), one of the  basic functions are enabled such as **mobile edge service assistance, mobile edge application assistance, traffic routing, DNS rules, timing, transport information**.
 
-[For additional information about Application Enablement API and other supporting functions](https://www.etsi.org/deliver/etsi_gs/MEC/001_099/011/01.01.01_60/gs_mec011v010101p.pdf)
+[Details about mobile edge platform and application enablement API and other supporting functions](https://www.etsi.org/deliver/etsi_gs/MEC/001_099/011/01.01.01_60/gs_mec011v010101p.pdf)
 
 [MP1.yaml](https://forge.etsi.org/gitlab/mec/gs011-app-enablement-api)
 
@@ -18,7 +18,7 @@ Via Mp1 reference point between the mobile edge platform and the mobile edge app
 
 * Implementation of Application Enablement service based on ETSI MEC MP1 standard
 
-* [Functionalities Support](#FunctionalitiesSupport)
+* [Supporting Functionalities](#FunctionalitiesSupport)
 
 
 * **Implementation Supports**
@@ -58,8 +58,8 @@ Via Mp1 reference point between the mobile edge platform and the mobile edge app
   MariaDB [(none)]> grant all privileges on *.* to appenableruser@localhost identified by 'R00t@r00t' with grant option
 
 
-## Run
-### export the env varibles
+### Run
+#### export the env varibles
 
 export DB_USER_NAME=appenableruser \
 export DB_PASSWORD=UjAwdEByMDB0Cg== // base64 encoded R00t@r00t\
@@ -68,7 +68,7 @@ export DB_TYPE=mysql\
 export DB_LISTENER_IP=127.0.0.1 // mysql service listner IP\
 export DB_LISTENER_PORT=3306 // mysql service port
 
-### run test cases
+#### run test cases
 cd $GOPATH/src/edge-app-enablement-service
 
 make test
