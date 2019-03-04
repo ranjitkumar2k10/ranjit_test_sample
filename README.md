@@ -1,9 +1,9 @@
 # Edge Platform Application Enablement Service
 
-*Maintained by* <a href="https://networks.nokia.com">
+**Maintained by** <a href="https://networks.nokia.com">
 <img src="https://www.nokia.com/sites/default/files/styles/original/public/media/nokia_logo_blue.png"  height="70"/>
-
 </a>
+
 
 * Master [![CircleCI](https://circleci.com/gh/helm/helm.svg?style=shield)](https://circleci.com/gh/helm/helm)
 [![Go Report Card](https://goreportcard.com/badge/github.com/helm/helm)](https://goreportcard.com/report/github.com/helm/helm)
