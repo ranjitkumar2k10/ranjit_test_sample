@@ -3,7 +3,9 @@
 ## Supported By [![N|Solid](https://www.nokia.com/sites/default/files/styles/original/public/media/nokia_logo_blue.png)](https://networks.nokia.com/)
 
 
-* Main: [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger) [![IntegrationTests](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/swagger-api/swagger-codegen)
+* Main [![CircleCI](https://circleci.com/gh/helm/helm.svg?style=shield)](https://circleci.com/gh/helm/helm)
+[![Go Report Card](https://goreportcard.com/badge/github.com/helm/helm)](https://goreportcard.com/report/github.com/helm/helm)
+[![GoDoc](https://godoc.org/k8s.io/helm?status.svg)](https://godoc.org/k8s.io/helm)
 
 The mobile edge platform, as defined in ETSI GS MEC 003 [[3]](https://www.etsi.org/deliver/etsi_gs/mec/001_099/003/01.01.01_60/gs_mec003v010101p.pdf), offers an environment where mobile edge applications may discover, advertise, consume and offer mobile edge services.
 
@@ -25,7 +27,7 @@ Via Mp1 reference point between the mobile edge platform and the mobile edge app
    * ETSI MEC ISG MEC011 Compatible versions - [mec11v205](https://forge.etsi.org/gitlab/mec/gs011-app-enablement-api/raw/mec11v205-swagger2/Mp1.yaml)
    * Open API Specification 2.0 [mec11v205-swagger2 MP1.yaml](https://forge.etsi.org/gitlab/mec/gs011-app-enablement-api)
 
-*Contribution related information? [Contribution](#Contributing)
+* Contribution related information? [Contribution](#Contributing)
 
 ## Getting Started
 
@@ -59,6 +61,9 @@ If you want to build from source:
 **Building binaries**
 You have a working [Go environment](https://golang.org/doc/install) and make sure [GO_PATH](https://github.com/golang/go/wiki/SettingGOPATH) is set properly.
 ```
+      $ cd $GOPATH/src
+      $ mkdir -p github.com/edge-app-enablement-service
+      $ cd github.com/edge-app-enablement-service
       $ git clone  <githublink/edge-app-enablement-service>
       $ cd $GOPATH/src/edge-app-enablement-service
       $ make build
@@ -137,19 +142,6 @@ mobile edge services they provide, and to update the mobile edge platform about 
 edge service availability
       * notify the changes of the mobile edge service availability to the relevant mobile edge application; ETSI 10 ETSI GS MEC 011 V1.1.1 (2017-07)
       * discovery of available mobile edge services
-
-# for debugging
-[root@localhost ~]# mysql
-MariaDB [(none)]> use appenabler
-MariaDB [appenabler]> show tables;
-+-----------------------------------------+
-| Tables_in_appenabler                    |
-+-----------------------------------------+
-| AppTerminationNotificationSubscription  |
-| SerAvailabilityNotificationSubscription |
-| SerAvailabilityNotification_v           |
-| services                                |
-+-----------------------------------------+
 
 ### Break down into end to end tests
 
