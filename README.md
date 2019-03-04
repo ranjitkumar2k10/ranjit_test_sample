@@ -9,7 +9,7 @@ The mobile edge platform, as defined in ETSI GS MEC 003 [[3]](https://www.etsi.o
 
 Via Mp1 reference point between the mobile edge platform and the mobile edge applications, as defined in ETSI GS MEC 003 [[3]](https://www.etsi.org/deliver/etsi_gs/mec/001_099/003/01.01.01_60/gs_mec003v010101p.pdf), some of the  basic functions are enabled such as **mobile edge service assistance, mobile edge application assistance, traffic routing, DNS rules, timing, transport information**.
 
-[Details about mobile edge platform and application enablement API and other supporting functions](https://www.etsi.org/deliver/etsi_gs/MEC/001_099/011/01.01.01_60/gs_mec011v010101p.pdf)
+[mobile edge platform and application enablement API and other supporting functions](https://www.etsi.org/deliver/etsi_gs/MEC/001_099/011/01.01.01_60/gs_mec011v010101p.pdf)
 
 [ETSI app enablement git lab](https://forge.etsi.org/gitlab/mec/gs011-app-enablement-api)
 
@@ -25,7 +25,7 @@ Via Mp1 reference point between the mobile edge platform and the mobile edge app
    * ETSI MEC ISG MEC011 Compatible versions - [mec11v205](https://forge.etsi.org/gitlab/mec/gs011-app-enablement-api/raw/mec11v205-swagger2/Mp1.yaml)
    * Open API Specification 2.0 [mec11v205-swagger2 MP1.yaml](https://forge.etsi.org/gitlab/mec/gs011-app-enablement-api)
 
-* [Contribution](#Contributing)
+*Contribution related information? [Contribution](#Contributing)
 
 ## Getting Started
 
@@ -33,12 +33,7 @@ If you want to build from source:
 
 * [Prerequisites](#Prerequisites)
 
-* You have a working [Go environment](https://golang.org/doc/install) and make sure [GO_PATH](https://github.com/golang/go/wiki/SettingGOPATH) is set properly.
-```
-      $ git clone  <githublink/edge-app-enablement-service>
-      $ cd $GOPATH/src/edge-app-enablement-service
-      $ make build
-```
+* [Buiding](#Building)
 * [Run](#Run)
 
 ### Prerequisites
@@ -59,9 +54,21 @@ If you want to build from source:
   // assign grant previleges to appenableruser\
   MariaDB [(none)]> grant all privileges on *.* to appenableruser@localhost identified by 'R00t@r00t' with grant option
 
+### Building
+
+**Building binaries**
+You have a working [Go environment](https://golang.org/doc/install) and make sure [GO_PATH](https://github.com/golang/go/wiki/SettingGOPATH) is set properly.
+```
+      $ git clone  <githublink/edge-app-enablement-service>
+      $ cd $GOPATH/src/edge-app-enablement-service
+      $ make build
+```
+
+**Building docker container**
+ need to update
 
 ### Run
-#### export the env varibles
+**export the env varibles**
 
 $ export DB_USER_NAME=appenableruser \
 $ export DB_PASSWORD=UjAwdEByMDB0Cg== // base64 encoded R00t@r00t\
@@ -70,34 +77,38 @@ $ export DB_TYPE=mysql\
 $ export DB_LISTENER_IP=127.0.0.1 // mysql service listner IP\
 $ export DB_LISTENER_PORT=3306 // mysql service port
 
-#### run test cases
+**run test cases**
 $ cd $GOPATH/src/edge-app-enablement-service
 
 $ make test
 
-### running service
+**running service**
 $ cd $GOPATH/src/edge-app-enablement-service
 
 $ ./bin/AppEnabler
 
 ## Development
 
-### Directory structure
+**Project structure**
 ```
 $ cd $GOPATH/src/edge-app-enablement-service  
-                                             - go (appenabler go module)
-                                              - AppDB (AppDB go module)
+                                             - go
+                                             - AppDB
 ```
 
-**go directory** :  
-            - appenabler go module\
-            - http handlers and business logic
-            
-**AppDB directory** : \
-            * database interaction with using go database sql driver\
-            * DML, DDL queries
+**go modules**  
+```
+a) appenabler module:
+      Location      -  go directory
+      Functionality -  http handlers to receive messages  and business logic
 
-### Code Design flow
+b) AppDB module:
+      Location      - AppDB directory
+      Functionality - Database interaction with using go database sql driver
+                    - DML, DDL queries
+```
+
+**Code Design flow**
 ```
 Flow: 
    [MEApplication POST/GET/PUT] -> [AppEnabler service]
@@ -107,6 +118,7 @@ Operations in App Enabler service:
 
 ```
 
+More information about the design flow etc.., please go refer Development.md file.
 
 
 ### Tech
@@ -115,7 +127,7 @@ App enablement service uses a number of open source projects to work properly:
 [openapi-generator](https://github.com/OpenAPITools/openapi-generator) - generating server stub code\
 [sql](https://github.com/golang/go/tree/master/src/database/sql) - connecting to sql based database \
 [MySQL Driver](https://github.com/go-sql-driver/mysql)
-
+(HTTP request multiplexer)https://github.com/gorilla/mux - Receving the Requests from MEApplications.
 
 
 ## FunctionalitiesSupport 
