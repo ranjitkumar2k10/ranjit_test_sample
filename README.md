@@ -1,11 +1,12 @@
 # Edge Platform Application Enablement Service
 
-## Supported By [![N|Solid](https://www.nokia.com/sites/default/files/styles/original/public/media/nokia_logo_blue.png)](https://networks.nokia.com/)
-<img src="https://www.nokia.com/sites/default/files/styles/original/public/media/nokia_logo_blue.png" width="100">
+**Supported by**<img src="https://www.nokia.com/sites/default/files/styles/original/public/media/nokia_logo_blue.png" ref="https://networks.nokia.com/" height="60">
 
-* Main: [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger) [![IntegrationTests](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/swagger-api/swagger-codegen)
+* Master [![CircleCI](https://circleci.com/gh/helm/helm.svg?style=shield)](https://circleci.com/gh/helm/helm)
+[![Go Report Card](https://goreportcard.com/badge/github.com/helm/helm)](https://goreportcard.com/report/github.com/helm/helm)
+[![GoDoc](https://godoc.org/k8s.io/helm?status.svg)](https://godoc.org/k8s.io/helm)
 
-The mobile edge platform, as defined in ETSI GS MEC 003 [[3]](https://www.etsi.org/deliver/etsi_gs/mec/001_099/003/01.01.01_60/gs_mec003v010101p.pdf), offers an environment where mobile edge applications may discover, advertise, consume and offer mobile edge services.
+The mobile edge platform, as defined in [ETSI GS MEC 003](https://www.etsi.org/deliver/etsi_gs/mec/001_099/003/01.01.01_60/gs_mec003v010101p.pdf), offers an environment where mobile edge applications may discover, advertise, consume and offer mobile edge services.
 
 Via Mp1 reference point between the mobile edge platform and the mobile edge applications, as defined in ETSI GS MEC 003 [[3]](https://www.etsi.org/deliver/etsi_gs/mec/001_099/003/01.01.01_60/gs_mec003v010101p.pdf), some of the  basic functions are enabled such as **mobile edge service assistance, mobile edge application assistance, traffic routing, DNS rules, timing, transport information**.
 
@@ -25,7 +26,7 @@ Via Mp1 reference point between the mobile edge platform and the mobile edge app
    * ETSI MEC ISG MEC011 Compatible versions - [mec11v205](https://forge.etsi.org/gitlab/mec/gs011-app-enablement-api/raw/mec11v205-swagger2/Mp1.yaml)
    * Open API Specification 2.0 [mec11v205-swagger2 MP1.yaml](https://forge.etsi.org/gitlab/mec/gs011-app-enablement-api)
 
-*Contribution related information? [Contribution](#Contributing)
+* Contribution related information? [Contribution](#Contributing)
 
 ## Getting Started
 
