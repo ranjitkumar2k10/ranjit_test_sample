@@ -83,12 +83,12 @@ $ export DB_TYPE=mysql\
 $ export DB_LISTENER_IP=127.0.0.1 // mysql service listner IP\
 $ export DB_LISTENER_PORT=3306 // mysql service port
 
-**run test cases**
+**run test cases**\
 $ cd $GOPATH/src/edge-app-enablement-service
 
 $ make test
 
-**running service**
+**running service**\
 $ cd $GOPATH/src/edge-app-enablement-service
 
 $ ./bin/AppEnabler
